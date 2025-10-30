@@ -26,7 +26,13 @@ SECRET_KEY = "django-insecure-dev-key-nz48zqPY5ScRCVRz"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG") == "1"
 
-CSRF_TRUSTED_ORIGINS = ["https://*.easyappz.ru/", "http://localhost:8080"]
+# CSRF trusted origins must be without trailing slash
+# Replace 'ваш-домен.com' with your real domain if different
+CSRF_TRUSTED_ORIGINS = [
+    "https://ваш-домен.com",
+    "https://*.easyappz.ru",
+    "http://localhost:8080",
+]
 
 # Allow all hosts in Docker (restrict with nginx/load balancer)
 ALLOWED_HOSTS = ["*"]
@@ -142,11 +148,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_URL = "django_static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
