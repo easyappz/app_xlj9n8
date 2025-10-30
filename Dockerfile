@@ -1,5 +1,8 @@
 FROM ubuntu:24.04
 
+# Устанавливаем Git (в базовом образе его нет)
+RUN apk add --no-cache git
+
 # Prevent interactive prompts during build
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -7,8 +10,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
+# Аргументы сборки
+ARG GITHUB_REPO="https://github.com/IbragimKhaniev/example-1-python-react"
+ARG REPO_NAME="example-1-python-react"
+
+# Клонируем репозиторий
+RUN git clone ${GITHUB_REPO} ${REPO_NAME}
+
 # Set working directory
-WORKDIR /app
+WORKDIR /app/${REPO_NAME}
 
 # Install system dependencies including Node.js
 RUN apt-get update && apt-get install -y \
