@@ -67,7 +67,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN useradd -m -u 1234 appuser && \
     touch /run/nginx.pid && \
     chown -R appuser:appuser /run/nginx.pid && \
-    chown -R appuser:appuser /app
+    chown -R appuser:appuser /app && \
+    chown -R appuser:appuser /app/react_build
 
 # Expose port
 EXPOSE 8080
