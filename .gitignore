@@ -2,4 +2,4 @@
 .venv
 __pycache__
 /persistent/*
-/static/
+/django_static/

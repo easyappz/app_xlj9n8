@@ -32,8 +32,8 @@ CSRF_TRUSTED_ORIGINS = ["https://*.easyappz.ru/", "http://localhost:8080"]
 ALLOWED_HOSTS = ["*"]
 
 # Static and media files
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static/"
+STATIC_URL = "/django_static/"
+STATIC_ROOT = BASE_DIR / "django_static/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "persistent" / "media/"
 
@@ -146,7 +146,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "django_static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -29,7 +29,7 @@ pip-delete-this-directory.txt
 *.log
 db.sqlite3
 db.sqlite3-journal
-/static/
+/django_static/
 /persistent/
 local_settings.py
 
